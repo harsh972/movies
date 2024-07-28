@@ -37,7 +37,6 @@ function Navbar() {
 
     return (
         <>
-            {/* mobilebutton */}
             <button className="z-40 text-3xl text-black fixed right-0 bottom-0 m-6 p-4 duration-150 rounded-full active:scale-90 bg-white block md:hidden" onClick={() => setActivemobile(!activemobile)}>
                 {activemobile ? <HiX /> : <HiMenuAlt1 />}
             </button>
@@ -49,7 +48,6 @@ function Navbar() {
                     transition={{ duration: 0.4 }}
                 >
                     <Link to="/" className="logo flex flex-col justify-center items-center m-7 gap-2" onClick={() => setActivemobile(!activemobile)}>
-                        {/* <img src={logo} alt="logo" className="w-24" /> */}
                         <h1 className="text-gray-400/70 font-bold text-2xl text-center">MovieMingle</h1>
                     </Link>
                 </motion.div>
@@ -62,8 +60,6 @@ function Navbar() {
 
                 </ul>
 
-                {/* Loginsection */}
-
                 <div className="absolute bottom-0 w-full p-5 md:p-2 text-white">
                     {user ? <>
                         <div className="w-full bg-gray-900 px-5 py-2 gap-4 rounded-xl flex items-center font-semibold border-2 border-blue-100/10">
@@ -74,11 +70,11 @@ function Navbar() {
                         <div className="cursor-pointer bg-red-500 flex justify-center items-center p-2 rounded-xl mt-2" onClick={() => {
                             auth.signOut()
                                 .then(() => {
-                                    localStorage.clear(); // Clear local storage on successful sign out
-                                    toast.error("Logout successfully"); // Show the toast message after logout
+                                    localStorage.clear();
+                                    toast.error("Logout successfully");
                                 })
                                 .catch((error) => {
-                                    toast.error(`Logout failed: ${error.message}`); // Handle any errors during sign out
+                                    toast.error(`Logout failed: ${error.message}`);
                                 });
                         }}>
                             <h1>Logout</h1>

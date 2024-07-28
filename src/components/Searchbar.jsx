@@ -14,21 +14,18 @@ function Searchbar() {
   const [typingTimeout, setTypingTimeout] = useState(null);
 
   const handleSearch = () => {
-      // Clear the previous timeout to prevent premature execution
       if (typingTimeout) {
           clearTimeout(typingTimeout);
       }
 
-      // Set a new timeout
       const newTimeout = setTimeout(() => {
           onKeyUp(value);
-      }, 500); // Adjust the timeout duration as needed (in milliseconds)
+      }, 500);
 
       setTypingTimeout(newTimeout);
   };
 
   const onKeyUp = (query) => {
-    // console.log(query)
     if (query !== "") {
         query = query.trim();
 

@@ -46,7 +46,6 @@ export const Detail = () => {
     );
     const videodata = await data.json();
     setVideo(videodata.results);
-    // console.log(videodata.results);
   }
 
   useEffect(() => {
